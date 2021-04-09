@@ -31,5 +31,5 @@ GoogleChromeの方はバージョンを指定してインストールするこ�
 安定版をインストールしています。  
 
 そのためchromedriverのバージョンと相違する可能性があります。  
-その場合は、[Dockerfile](https://github.com/shingo8422/selenium-hub-docker-for-python/blob/122a7124c88a750c17e47dacba19815c51421b32/docker/python/Dockerfile#L17)
+その場合は、[Dockerfile](https://github.com/shingo8422/selenium-hub-docker-for-python-master/blob/c507bcadf8542ba0baf230e50f0d0d11546551ab/docker/python/Dockerfile#L17)
 の１７行目をstableのバージョンに合わせてください。  
