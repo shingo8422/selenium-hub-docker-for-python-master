@@ -1,0 +1,29 @@
+version: '3'
+
+services:
+  hub:
+    image: selenium/hub
+    ports:
+      - 4444:4444
+
+  chrome:
+    image: selenium/node-chrome-debug
+    ports:
+      - 5900:5900
+    volumes:
+      - /dev/shm:/dev/shm
+    depends_on:
+      - hub
+    environment:
+      HUB_HOST: hub
+      
+  app:
+    build: ./docker/python/
+    volumes:
+      - ./:/repository
+    working_dir: "/repository/src"
+    command: bash /repository/docker/python/init.sh
+    depends_on:
+      - hub
+    environment:
+      HUB_HOST: hub
